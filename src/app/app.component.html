@@ -1,0 +1,31 @@
+<table>
+  <tr>
+    <td><button (click)="login()" *ngIf="!isLoggedIn()">SIGN IN</button></td>
+    <td><button (click)="logout()" *ngIf="isLoggedIn()">SIGN OUT</button></td>
+  </tr>
+</table>
+<div *ngIf="isLoggedIn()">
+  <h3>You are logged in</h3>
+</div>
+<div *ngIf="!isLoggedIn()">
+  <h3>You are NOT logged in</h3>
+</div>
+<div *ngIf="isLoggedIn()">
+  <table>
+    <tr>
+      <td><span>Welcome {{getName()}}!</span></td>
+    </tr>
+    <tr>
+      <td><span><button (click)="callProfile()">GET PROFILE</button></span></td>
+    </tr>
+    <tr>
+      <td><span><button (click)="callEmails()">GET EMAILS</button></span></td>
+    </tr>
+    <tr>
+      <td><span><button (click)="sayHello()">SAY HELLO</button></span></td>
+    </tr>
+    <tr>
+      <td><span *ngIf="isLoggedIn()">API Response: {{apiResponse}}</span></td>
+    </tr>
+  </table>
+</div>
